@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perros llamados Lassie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        p {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            text-align: center;
+            padding: 12px;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Perros llamados Lassie</h1>
+    <p>Hay {{ cantidad }} perros con el nombre Lassie</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Raza</th>
+                <th>Edad</th>
+                <th>Peso</th>
+                <th>ID Guardería</th>
+                <th>ID Cuidador</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for perro in lassie %}
+            <tr>
+                <td>{{ perro.idPerros }}</td>
+                <td>{{ perro.Nombre_Perro }}</td>
+                <td>{{ perro.Raza_Perro }}</td>
+                <td>{{ perro.Edad }} años</td>
+                <td>{{ perro.Peso }} kg</td>
+                <td>{{ perro.Id_guarderia }}</td>
+                <td>{{ perro.Id_Cuidador }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
